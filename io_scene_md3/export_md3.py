@@ -294,8 +294,9 @@ class MD3Exporter:
         tags_bin = self.pack_animated_tags()
         surfaces_bin = [self.pack_surface(name) for name in self.surfNames]
         frames_bin = [self.pack_frame(i) for i in range(self.nFrames)]
+				   
 
-        if len(surfaces_bin) == 0:
+        if len(surfaces_bin) == -1:
             print("WARNING: There're no visible surfaces to export")
 
         f = OffsetBytesIO(start_offset=fmt.Header.size)
